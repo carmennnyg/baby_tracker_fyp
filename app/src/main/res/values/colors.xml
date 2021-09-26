@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="colorBackground">#FEDBD0</color>
+    <color name="basic">#34B7FF</color>
+    <color name="colorText">#442C2E</color>
+    <color name="colorEmail">#7a8793</color>
+    <color name="buttonEmail">#23272b</color>
+    <color name="colorSecondBackground">#FEEAE6</color>
+    <color name="colorFeeding">#F9AA33</color>
+    <color name="colorDiapering">#4A6572</color>
+    <color name="colorSleeping">#37966F</color>
+    <color name="colorHealth">#ab879f</color>
+    <color name="colorLocation">#DD606E</color>
+    <color name="blue">#0267FF</color>
+
+</resources>

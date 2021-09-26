@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".HomeActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="123dp"
+        android:layout_height="122dp"
+        android:layout_marginBottom="464dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.013"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/babyicon" />
+
+    <Button
+        android:id="@+id/feedingButton"
+        android:layout_width="341dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="396dp"
+        android:background="@drawable/button_feeding"
+        android:gravity="center"
+        android:text="F e e d i n g"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:backgroundTint="@color/colorFeeding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/mapButton"
+        android:layout_width="341dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="108dp"
+        android:background="@drawable/button_location"
+        android:gravity="center"
+        android:text="L O C A T I O N"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:backgroundTint="#DD606E"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/healthButton"
+        android:layout_width="341dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="180dp"
+        android:background="@drawable/button_health"
+        android:gravity="center"
+        android:text="H E A L T H"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:backgroundTint="@color/colorHealth"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/diaperingButton"
+        android:layout_width="341dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="328dp"
+        android:background="@drawable/button_diapering"
+        android:gravity="center"
+        android:text="D I A P E R I N G"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:backgroundTint="@color/colorDiapering"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/sleepingButton"
+        android:layout_width="341dp"
+        android:layout_height="51dp"
+        android:layout_marginBottom="256dp"
+        android:background="@drawable/button_diapering"
+        android:gravity="center"
+        android:text="S L E E P I N G"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:backgroundTint="@color/colorSleeping"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/babytrackertextView"
+        android:layout_width="231dp"
+        android:layout_height="59dp"
+        android:layout_marginBottom="524dp"
+        android:letterSpacing="0.1"
+        android:text="Welcome to "
+        android:textColor="@android:color/black"
+        android:textSize="30dp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/babytrackertextView2"
+        android:layout_width="265dp"
+        android:layout_height="78dp"
+        android:layout_marginBottom="464dp"
+        android:letterSpacing="0.1"
+        android:text="Baby Tracker "
+        android:textColor="@android:color/black"
+        android:textSize="35dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.89"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/forNPtextView"
+        android:layout_width="258dp"
+        android:layout_height="54dp"
+        android:layout_marginBottom="444dp"
+        android:letterSpacing="0.1"
+        android:text="for New Parents "
+        android:textColor="#CF3469"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/summaryButton"
+        android:layout_width="107dp"
+        android:layout_height="84dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.036"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/summary" />
+
+    <ImageButton
+        android:id="@+id/logoutButton"
+        android:layout_width="107dp"
+        android:layout_height="84dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.947"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/logout" />
+
+    <ImageButton
+        android:id="@+id/chartButton"
+        android:layout_width="107dp"
+        android:layout_height="84dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/colorSecondBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/chart" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

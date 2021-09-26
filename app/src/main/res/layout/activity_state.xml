@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSecondBackground"
+    tools:context=".StateActivity">
+
+    <TextView
+        android:id="@+id/stateTV"
+        android:layout_width="313dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="540dp"
+        android:gravity="center_horizontal"
+        android:letterSpacing="0.04"
+        android:text="Choose a State"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/stateBackIB"
+        android:layout_width="38dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="540dp"
+        android:background="@color/colorSecondBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24"
+        app:tint="@color/black"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/penangTV"
+        android:layout_width="194dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="464dp"
+        android:letterSpacing="0.04"
+        android:text="Penang"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/sabahTV"
+        android:layout_width="194dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="236dp"
+        android:letterSpacing="0.04"
+        android:text="Sabah"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="442dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="132dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.387"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/line" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="442dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.419"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/line" />
+
+    <ImageButton
+        android:id="@+id/sarawakIB"
+        android:layout_width="64dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="156dp"
+        android:background="@color/colorSecondBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+        app:tint="#000000"
+        tools:ignore="VectorDrawableCompat" />
+
+    <ImageButton
+        android:id="@+id/kedahIB"
+        android:layout_width="64dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="84dp"
+        android:background="@color/colorSecondBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+        app:tint="#000000"
+        tools:ignore="VectorDrawableCompat" />
+
+    <ImageButton
+        android:id="@+id/malaccaIB"
+        android:layout_width="64dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="8dp"
+        android:background="@color/colorSecondBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+        app:tint="#000000"
+        tools:ignore="VectorDrawableCompat" />
+
+    <ImageButton
+        android:id="@+id/sabahIB"
+        android:layout_width="64dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="228dp"
+        android:background="@color/colorSecondBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+        app:tint="#000000"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/sarawakTV"
+        android:layout_width="194dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="164dp"
+        android:letterSpacing="0.04"
+        android:text="Sarawak"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/kedahTV"
+        android:layout_width="194dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="92dp"
+        android:letterSpacing="0.04"
+        android:text="Kedah"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/malaccaTV"
+        android:layout_width="194dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="20dp"
+        android:letterSpacing="0.04"
+        android:text="Malacca"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="442dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="204dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.29"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/line" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="442dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="432dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/line" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="442dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="356dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.354"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/line" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="442dp"
+        android:layout_height="31dp"
+        android:layout_marginBottom="280dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.258"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/line" />
+
+    <ImageButton
+        android:id="@+id/penangIB"
+        android:layout_width="64dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="456dp"
+        android:background="@color/colorSecondBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+        app:tint="#000000"
+        tools:ignore="VectorDrawableCompat" />
+
+    <ImageButton
+        android:id="@+id/perakIB"
+        android:layout_width="64dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="376dp"
+        android:background="@color/colorSecondBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+        app:tint="#000000"
+        tools:ignore="VectorDrawableCompat" />
+
+    <ImageButton
+        android:id="@+id/selangorIB"
+        android:layout_width="64dp"
+        android:layout_height="61dp"
+        android:layout_marginBottom="304dp"
+        android:background="@color/colorSecondBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
+        app:tint="#000000"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/perakTV"
+        android:layout_width="194dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="388dp"
+        android:letterSpacing="0.04"
+        android:text="Perak"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/selangorTV"
+        android:layout_width="194dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="312dp"
+        android:letterSpacing="0.04"
+        android:text="Selangor"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.073"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

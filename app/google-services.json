@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "258771158376",
+    "project_id": "fypbabytracker-b407b",
+    "storage_bucket": "fypbabytracker-b407b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258771158376:android:2d5ef3a6ba38ec9a8a42dd",
+        "android_client_info": {
+          "package_name": "com.example.baby_tracker_fyp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "258771158376-qhs2j708fp4rsbpg3m44aj3l4lq58q7e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApzPlez1beB5GDB-VF7g_AeMQ6aXO_dc0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "258771158376-qhs2j708fp4rsbpg3m44aj3l4lq58q7e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

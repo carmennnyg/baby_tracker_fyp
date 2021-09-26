@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSecondBackground"
+    tools:context=".HealthActivity">
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="412dp"
+        android:layout_height="64dp"
+        android:layout_marginBottom="544dp"
+        android:background="#E3B4A3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageButton
+        android:id="@+id/back7Button"
+        android:layout_width="40dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="556dp"
+        android:background="#E3B4A3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24"
+        app:tint="@color/black"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/healthTV"
+        android:layout_width="252dp"
+        android:layout_height="58dp"
+        android:layout_marginBottom="536dp"
+        android:letterSpacing="0.1"
+        android:text="H e a l t h"
+        android:textColor="@android:color/black"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.767"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/temperatureButton"
+        android:layout_width="370dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="376dp"
+        android:background="#ADE6A3"
+        android:gravity="center"
+        android:text="Temperature"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/medicationButton"
+        android:layout_width="370dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="260dp"
+        android:background="#EF93AE"
+        android:gravity="center"
+        android:text="Medication"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/symptomsButton"
+        android:layout_width="370dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="144dp"
+        android:background="#E49050"
+        android:gravity="center"
+        android:text="Baby Symptoms"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.39"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

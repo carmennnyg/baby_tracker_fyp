@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.baby_tracker_fyp">
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the "MyLocation" functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- Provides an estimate of the device's location, to within about 1 mile (1.6 km). -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--
+            The API key for Google Maps-based APIs is defined as a string resource.
+            (See the file "res/values/google_maps_api.xml").
+            Note that the API key is linked to the encryption key used to sign the APK.
+            You need a different API key for each encryption key, including the release key that is used to
+            sign the APK for publishing.
+            You can define the keys for the debug and release targets in src/debug/ and src/release/.
+    -->
+    <meta-data
+        android:name="com.google.android.geo.API_KEY"
+        android:value="@string/map_key" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Baby_tracker_fyp">
+        <activity android:name=".malaccaCity.MerlimauMapsActivity"></activity>
+        <activity android:name=".malaccaCity.AyerKerohMapsActivity" />
+        <activity android:name=".malaccaCity.MalaccaMapsActivity" />
+        <activity android:name=".malaccaCity.AlorGajahMapsActivity" />
+        <activity android:name=".kedahCity.BalingMapsActivity" />
+        <activity android:name=".kedahCity.GurunMapsActivity" />
+        <activity android:name=".kedahCity.AyerHitamMapsActivity" />
+        <activity android:name=".kedahCity.AlorSetarMapsActivity" />
+        <activity android:name=".sarawakCity.SibuMapsActivity" />
+        <activity android:name=".sarawakCity.SriAmanMapsActivity" />
+        <activity android:name=".sarawakCity.MiriMapsActivity" />
+        <activity android:name=".sarawakCity.KuchingMapsActivity" />
+        <activity android:name=".sabahCity.KudatMapsActivity" />
+        <activity android:name=".sabahCity.TawauMapsActivity" />
+        <activity android:name=".sabahCity.SandakanMapsActivity" />
+        <activity android:name=".sabahCity.KotaKinabaluMapsActivity" />
+        <activity android:name=".selangorCity.SubangJayaMapsActivity" />
+        <activity android:name=".selangorCity.CyberjayaMapsActivity" />
+        <activity android:name=".selangorCity.ShahAlamMapsActivity" />
+        <activity android:name=".selangorCity.KlangMapsActivity" />
+        <activity android:name=".perakCity.KamparMapsActivity" />
+        <activity android:name=".perakCity.SungaiSiputMapsActivity" />
+        <activity android:name=".perakCity.TaipingMapsActivity" />
+        <activity android:name=".perakCity.IpohMapsActivity" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".penangCity.GeorgetownMapsActivity"
+            android:label="@string/title_activity_georgetown_maps" />
+        <activity android:name=".penangCity.NibongTebalMapsActivity" />
+        <activity android:name=".penangCity.BayanLepasMapsActivity" />
+        <activity android:name=".penangCity.ButterworthMapsActivity" />
+        <activity android:name=".state.MalaccaCity" />
+        <activity android:name=".state.KedahCity" />
+        <activity android:name=".state.SarawakCity" />
+        <activity android:name=".state.SabahCity" />
+        <activity android:name=".state.SelangorCity" />
+        <activity android:name=".state.PerakCity" />
+        <activity android:name=".state.PenangCity" />
+        <activity android:name=".DiseaseActivity" />
+        <activity android:name=".SymptomsActivity" />
+        <activity android:name=".MedicationActivity" />
+        <activity android:name=".TemperatureActivity" />
+        <activity android:name=".mealFeedingActivity" />
+        <activity android:name=".bottleFeedingActivity" />
+        <activity android:name=".breastFeedingActivity" />
+        <activity android:name=".LogoutActivity" />
+        <activity android:name=".ChartActivity" />
+        <activity android:name=".Summary1Activity" />
+        <activity android:name=".StateActivity" />
+        <activity android:name=".HealthActivity" />
+        <activity android:name=".SleepingActivity" />
+        <activity android:name=".DiaperingActivity" />
+        <activity android:name=".FeedingActivity" />
+        <activity android:name=".ForgotPwdActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,85 @@
+<resources>
+    <string name="app_name">baby_tracker_fyp</string>
+
+    <string name="country_prompt">Choose a Supplement</string>
+
+    <string name="auth_failed">Authentication Failed, Please Check Your Email and Password or Sign Up</string>
+
+    <string name="map_key" translatable="false">AIzaSyAZ_YWvp91UUuI5B93eZNZgLATNcm_S3lU</string>
+
+    <string-array name="breastfeeding_time">
+        <item>Choose Time</item>
+        <item>None</item>
+        <item>0</item>
+        <item>5</item>
+        <item>10</item>
+        <item>15</item>
+        <item>30</item>
+        <item>45</item>
+        <item>50</item>
+        <item>60</item>
+    </string-array>
+
+    <string-array name="meal_feeding">
+        <item>Choose a Meal</item>
+        <item>None</item>
+        <item>Meat</item>
+        <item>Cereal</item>
+        <item>Finger Foods</item>
+        <item>Mashed Vegetables</item>
+        <item>Yogurt</item>
+        <item>Juice</item>
+        <item>Water</item>
+        <item>Fruits</item>
+        <item>None</item>
+    </string-array>
+
+    <string-array name="supplement_feeding">
+        <item>Choose a Supplement</item>
+        <item>None</item>
+        <item>Vitamin 12</item>
+        <item>Vitamin D</item>
+        <item>Vitamin K</item>
+        <item>Calcium</item>
+        <item>Iron</item>
+        <item>None</item>
+    </string-array>
+
+    <string-array name="diaper_status">
+        <item>Choose Status</item>
+        <item>Pee</item>
+        <item>Poo</item>
+        <item>Soiled</item>
+        <item>None</item>
+    </string-array>
+
+    <string-array name="symptom_list">
+        <item>SELECT SYMPTOM</item>
+        <item>None</item>
+        <item>Fever</item>
+        <item>Sneezing</item>
+        <item>Coughing</item>
+        <item>Lack of Appetite</item>
+        <item>Difficulty in Sleeping</item>
+        <item>Skin Sore</item>
+        <item>Skin Red</item>
+        <item>Skin Scaly</item>
+        <item>Skin Tender</item>
+        <item>Crying for no obvious reasons</item>
+        <item>Pain Cry</item>
+        <item>Reddening of the Face</item>
+        <item>Crying lasts for three hours or more</item>
+        <item>Stomach Pains</item>
+        <item>Small red or white bumps on cheeks, nose, and forehead</item>
+        <item>Hard small pebbles</item>
+        <item>Infrequent stools that are difficult to pass</item>
+        <item>Liquid Stools</item>
+        <item>Loose, Yellow, and Seedy Stool</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_georgetown_maps">Map</string>
+
+
+</resources>
