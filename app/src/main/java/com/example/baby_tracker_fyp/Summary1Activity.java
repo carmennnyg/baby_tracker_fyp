@@ -68,9 +68,10 @@ public class Summary1Activity extends AppCompatActivity {
         valueEventListener = current_user_db.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                //Gives access to all of the immediate children of this snapshot
                 for (DataSnapshot child : dataSnapshot.getChildren()) {
                     if (child.getKey().equals("Amount_Milk_In_OZ")) {
-                        String AmtInOZ = child.getValue().toString();
+                        String AmtInOZ = child.getValue().toString(); //returns the data contained in this snapshot as native types
                         mLastAmountInOz.setText(AmtInOZ);
                     }
                     if (child.getKey().equals("Bottle_Feeding_Date_and_Time")) {

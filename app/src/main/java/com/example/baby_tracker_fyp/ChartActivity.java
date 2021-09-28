@@ -47,6 +47,7 @@ public class ChartActivity extends AppCompatActivity {
         // __________________Start for retrieving breast feeding database
         // _________________(time of left and right breast) information_________________________________
 
+        //get an instance and access a location in the database
         final DatabaseReference current_user_db2 = FirebaseDatabase.getInstance().getReference()
                 .child("Users").child(mAuth.getCurrentUser().getUid())
                 .child("Feeding").child("Breast Feeding").child("Time Stamp");
@@ -59,34 +60,37 @@ public class ChartActivity extends AppCompatActivity {
 
                     current_user_db2.child(dateAndTime).addValueEventListener(new ValueEventListener() {
                         @Override
-                        public void onDataChange(DataSnapshot dataSnapshot) {
+                        public void onDataChange(DataSnapshot dataSnapshot) { //This method will be called with a snapshot of the current data at the location
 
-                            //String time1 = "0";
                             String[] xValues = {};
-                            //float lFeedingDuration = 0;
                             float[] yValues = {};
-                            //float rFeedingDuration = 0;
                             float[] yValues2 = {};
 
                             for(DataSnapshot snapshot: dataSnapshot.getChildren()){
                                 String time2 = snapshot.getKey();
 
+                                // Loop all time stamps in the database
                                 int currentSize = xValues.length;
                                 int newSize = currentSize + 1;
                                 String[] tempArray = new String[newSize];
                                 for(int i = 0; i < currentSize; i++)
+
                                 {
                                     tempArray[i] = xValues[i];
                                 }
+
                                 tempArray[newSize - 1] = time2;
                                 xValues = tempArray;
                             }
 
+                            //// Loop the time of left & right breastfeeding in database
+                            //Gives access to all of the immediate children of this snapshot
                             for(DataSnapshot child: dataSnapshot.getChildren()) {
+                                //This method is used to present the data contained in this snapshot into a class of I choosing.
                                 String leftBreastFeedTime = child.child("Left_Breast_Feeding_Time").getValue(String.class);
-                                float lBreastTime = Float.parseFloat(leftBreastFeedTime);
+                                float lBreastTime = Float.parseFloat(leftBreastFeedTime); //return a new float of the lBreastTime
                                 String rightBreastFeedTime = child.child("Right_Breast_Feeding_Time").getValue(String.class);
-                                float rBreastTime = Float.parseFloat(rightBreastFeedTime);
+                                float rBreastTime = Float.parseFloat(rightBreastFeedTime); //return a new float of the rBreastTime
 
                                 int currentSize = yValues.length;
                                 int newSize = currentSize + 1;
@@ -102,16 +106,20 @@ public class ChartActivity extends AppCompatActivity {
                                 yValues2 = tempArray2;
                             }
 
-                            XAxis xAxis = mBreastFeedingChart.getXAxis();
+                            //Change chart features and settings
+                            XAxis xAxis = mBreastFeedingChart.getXAxis(); //get the x axis from chart
+                            //Sets the minimum interval between the y-axis values.
+                            //Used to avoid value duplicating when zooming in to a point where the number of decimals set for the axis
+                            // no longer allow to distinguish between two axis values.
                             xAxis.setGranularity(1f);
+                            //Enables the granularity feature that limits the interval of the y-axis when zooming in
                             xAxis.setGranularityEnabled(true);
-                            drawMultiLineGraph(yValues, yValues2, xValues);
-                            //drawLineGraph(yValues, xValues);
-                            //drawLineGraph(yValues2, xValues);
+                            drawMultiLineGraph(yValues, yValues2, xValues); //Create the drawMultiLineGraph method
+
                         }
 
                         @Override
-                        public void onCancelled(DatabaseError databaseError) {
+                        public void onCancelled(DatabaseError databaseError) { //This method will be triggered in the event that this listener either failed at the server or been removed
                         }
                     });
                 }
@@ -357,31 +365,31 @@ public class ChartActivity extends AppCompatActivity {
 
 
     // Breast Feeding Multi Line Graph
+    // Pass data in the Multi Line Chart
     private void drawMultiLineGraph(float[] yValues, float[] yValues2, String[] xValues) {
-        ArrayList<Entry> yData = new ArrayList<>();
-        ArrayList<Entry> yData2 = new ArrayList<>();
+        ArrayList<Entry> yData = new ArrayList<>(); //create a list of entry of yData
+        ArrayList<Entry> yData2 = new ArrayList<>(); //create a list of entry of yData2
         for (int i = 0; i < yValues.length; i++) {
-            yData.add(new Entry(i, yValues[i]));
+            yData.add(new Entry(i, yValues[i])); //Add yData to the entry list by creating an object of Entry and passing x and y to its constructor
             yData2.add(new Entry(i, yValues2[i]));
         }
 
-        ArrayList<ILineDataSet> lineDataSets = new ArrayList<>();
-        LineDataSet setl, setr;
-        setl = new LineDataSet(yData, "Left Breast Feeding Time in Mins");
-        setl.setColor(Color.BLUE);
-        setr = new LineDataSet(yData2, "Right Breast Feeding Time in Mins");
-        setr.setColor(Color.GREEN);
+        ArrayList<ILineDataSet> lineDataSets = new ArrayList<>(); ////values for data input lineDataSets
+        LineDataSet setl, setr; //Create a reference variable of the Multi Line chart, LineDataSet setl, setr
+        setl = new LineDataSet(yData, "Left Breast Feeding Time in Mins"); //create a dataset and give it a type
+        setl.setColor(Color.BLUE); // to set the color
+        setr = new LineDataSet(yData2, "Right Breast Feeding Time in Mins"); //create a dataset and give it a type
+        setr.setColor(Color.GREEN); // to set the color
         setl.setValueTextSize(20f);
         setr.setValueTextSize(20f);
-        lineDataSets.add(setl);
-        lineDataSets.add(setr);
+        lineDataSets.add(setl); //Add setl data to the entry list (lineDataSets)
+        lineDataSets.add(setr); //Add setr data to the entry list (lineDataSets)
         LineData data = new LineData(lineDataSets);
         LineData data2 = new LineData(setr);
-        //mBreastFeedingChart.getXAxis().setValueFormatter(new LabelFormatter(xValues));
-        mBreastFeedingChart.setData(data);
-        mBreastFeedingChart.invalidate();
-        mBreastFeedingChart.animateY(2000);
-        //mBreastFeedingChart.setData(data2);
+        mBreastFeedingChart.setData(data); //sets the data
+        mBreastFeedingChart.invalidate(); //update the values and it automatically changes the values in the multi line chart.
+        //Animates the charts values on the vertical axis, means that the chart will build up within the specified time from bottom to top.
+        mBreastFeedingChart.animateY(2000); //animate vertical 2000 milliseconds
     }
 
     // Bottle Feeding Bar Graph
@@ -397,12 +405,10 @@ public class ChartActivity extends AppCompatActivity {
         set4.setDrawValues(true);
         set4.setValueTextSize(20f);
         BarData data5 = new BarData(set4);
-        //IAxisValueFormatter xAxisFormatter = new LabelFormatter(xValues_bargraph);
         XAxis xAxis = mBottleFeedingChart.getXAxis();
-        //xAxis.setValueFormatter((ValueFormatter) xAxisFormatter);
         mBottleFeedingChart.setData(data5);
         mBottleFeedingChart.invalidate();
-        mBottleFeedingChart.animateY(5000);
+        mBottleFeedingChart.animateY(5000); ////animate vertical 5000 milliseconds
 
     }
 
@@ -419,12 +425,10 @@ public class ChartActivity extends AppCompatActivity {
         set2.setDrawValues(true);
         set2.setValueTextSize(20f);
         BarData data3 = new BarData(set2);
-        //IAxisValueFormatter xAxisFormatter = new LabelFormatter(xValues_bargraph);
         XAxis xAxis = mSleepingChart.getXAxis();
-        //xAxis.setValueFormatter((ValueFormatter) xAxisFormatter);
         mSleepingChart.setData(data3);
         mSleepingChart.invalidate();
-        mSleepingChart.animateY(5000);
+        mSleepingChart.animateY(5000); ////animate vertical 5000 milliseconds
 
     }
 
@@ -441,12 +445,10 @@ public class ChartActivity extends AppCompatActivity {
         set3.setDrawValues(true);
         set3.setValueTextSize(20f);
         BarData data4 = new BarData(set3);
-        //IAxisValueFormatter xAxisFormatter = new LabelFormatter(xValues_bargraph);
         XAxis xAxis = mTemperatureChart.getXAxis();
-        //xAxis.setValueFormatter((ValueFormatter) xAxisFormatter);
         mTemperatureChart.setData(data4);
         mTemperatureChart.invalidate();
-        mTemperatureChart.animateY(5000);
+        mTemperatureChart.animateY(5000); ////animate vertical 5000 milliseconds
 
     }
 
