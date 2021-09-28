@@ -55,8 +55,10 @@ public class GeorgetownMapsActivity extends FragmentActivity implements OnMapRea
                 == getPackageManager().PERMISSION_GRANTED) {
             enableuserlocation();
         } else {
+            //Gets whether to show UI with rationale before requesting a permission
             if (ActivityCompat.shouldShowRequestPermissionRationale(GeorgetownMapsActivity.this,
                     Manifest.permission.ACCESS_FINE_LOCATION)) {
+                //Requests permissions to be granted to this application
                 ActivityCompat.requestPermissions(GeorgetownMapsActivity.this,
                         new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, ACCESS_LOCATION_REQUEST_CODE);
             } else {
@@ -68,7 +70,9 @@ public class GeorgetownMapsActivity extends FragmentActivity implements OnMapRea
 
     }
 
+    //Enables the My Location Layer if the fine location permission has been granted.
     private void enableuserlocation() {
+        //Determine whether I have been granted a particular permission
         if (ActivityCompat.checkSelfPermission(GeorgetownMapsActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
                 (GeorgetownMapsActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
