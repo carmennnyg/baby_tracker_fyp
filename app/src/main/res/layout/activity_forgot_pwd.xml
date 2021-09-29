@@ -27,9 +27,9 @@
 
     <EditText
         android:id="@+id/resetEmail"
-        android:layout_width="324dp"
-        android:layout_height="67dp"
-        android:layout_marginBottom="228dp"
+        android:layout_width="397dp"
+        android:layout_height="79dp"
+        android:layout_marginBottom="216dp"
         android:background="@drawable/button_email"
         android:ems="10"
         android:gravity="center"
@@ -41,7 +41,6 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button

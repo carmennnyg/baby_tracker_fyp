@@ -21,6 +21,7 @@ public class GeorgetownMapsActivity extends FragmentActivity implements OnMapRea
     private GoogleMap mMap;
     SupportMapFragment mapFragment;
 
+    // Request location permission 
     private int ACCESS_LOCATION_REQUEST_CODE = 1001;
 
     @Override
@@ -59,6 +60,7 @@ public class GeorgetownMapsActivity extends FragmentActivity implements OnMapRea
             if (ActivityCompat.shouldShowRequestPermissionRationale(GeorgetownMapsActivity.this,
                     Manifest.permission.ACCESS_FINE_LOCATION)) {
                 //Requests permissions to be granted to this application
+                //Show Dialog
                 ActivityCompat.requestPermissions(GeorgetownMapsActivity.this,
                         new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, ACCESS_LOCATION_REQUEST_CODE);
             } else {
