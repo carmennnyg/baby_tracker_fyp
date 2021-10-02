@@ -102,7 +102,7 @@
         android:background="#E4CBCB"
         android:ems="10"
         android:gravity="start"
-        android:inputType="number"
+        android:inputType="numberDecimal"
         android:paddingLeft="10dp"
         android:paddingTop="2dp"
         android:textAlignment="viewStart"
