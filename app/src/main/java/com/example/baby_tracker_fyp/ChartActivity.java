@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
@@ -14,6 +15,9 @@ import com.github.mikephil.charting.data.BarEntry;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.IAxisValueFormatter;
+import com.github.mikephil.charting.formatter.IValueFormatter;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
 import com.google.firebase.auth.FirebaseAuth;
@@ -385,7 +389,7 @@ public class ChartActivity extends AppCompatActivity {
         lineDataSets.add(setl); //Add setl data to the entry list (lineDataSets)
         lineDataSets.add(setr); //Add setr data to the entry list (lineDataSets)
         LineData data = new LineData(lineDataSets);
-        LineData data2 = new LineData(setr);
+        //LineData data2 = new LineData(setr);
         mBreastFeedingChart.setData(data); //sets the data
         mBreastFeedingChart.invalidate(); //update the values and it automatically changes the values in the multi line chart.
         //Animates the charts values on the vertical axis, means that the chart will build up within the specified time from bottom to top.
@@ -451,5 +455,6 @@ public class ChartActivity extends AppCompatActivity {
         mTemperatureChart.animateY(5000); ////animate vertical 5000 milliseconds
 
     }
+
 
 }

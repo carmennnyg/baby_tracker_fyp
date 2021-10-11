@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.baby_tracker_fyp">
+
+    <meta-data android:name="firebase_crashlytics_collection_enabled" android:value="false" />
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the "MyLocation" functionality.
     -->
+
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" /> <!-- Provides an estimate of the device's location, to within about 1 mile (1.6 km). -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />

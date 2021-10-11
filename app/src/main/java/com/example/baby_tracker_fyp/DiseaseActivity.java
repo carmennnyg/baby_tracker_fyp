@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class DiseaseActivity extends AppCompatActivity {
-    private TextView info[] = new TextView[2];
+    private TextView info[] = new TextView[7];
     private CardView dis_content;
     private ImageView im[] = new ImageView[7];
 
@@ -24,9 +24,18 @@ public class DiseaseActivity extends AppCompatActivity {
         dis_content = findViewById(R.id.cardView);
         im[0] = findViewById(R.id.content_disease1);
         im[1] = findViewById(R.id.content_disease2);
+        im[2] = (ImageView) findViewById(R.id.content_disease3);
+        im[3] = (ImageView) findViewById(R.id.content_disease4);
+        im[4] = (ImageView) findViewById(R.id.content_disease5);
+        im[5] = (ImageView) findViewById(R.id.content_disease6);
+        im[6] = (ImageView) findViewById(R.id.content_disease7);
         info[0] = findViewById(R.id.info1);
         info[1] = findViewById(R.id.info2);
-
+        info[2] = findViewById(R.id.info3);
+        info[3] = findViewById(R.id.info4);
+        info[4] = findViewById(R.id.info5);
+        info[5] = findViewById(R.id.info6);
+        info[6] = findViewById(R.id.info7);
 
         int max = getIntent().getIntExtra("max",0);
         int[] c = getIntent().getIntArrayExtra("c");

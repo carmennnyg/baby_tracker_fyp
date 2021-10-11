@@ -262,6 +262,7 @@ public class Summary1Activity extends AppCompatActivity {
     }
 
 
+    // clean up the program
     @Override
     public void onDestroy() {
         super.onDestroy();

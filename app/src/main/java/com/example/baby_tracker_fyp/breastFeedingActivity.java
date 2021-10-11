@@ -176,24 +176,6 @@ public class breastFeedingActivity extends AppCompatActivity implements
 
         mTime = " ("+ updateTime+")";
     }
-    // add items into spinner dynamically
-    public void addItemsOnSpinner2() {
-        rightBreastFeedSpinner = findViewById(R.id.right_breast_feed_spinner);
-        rightBreastFeedSpinner.setOnItemSelectedListener(new CustomOnItemSelectedListener());
-
-    }
-
-    public void addListenerOnSpinnerItemSelection() {
-        leftBreastFeedSpinner = findViewById(R.id.left_breast_feed_spinner);
-        leftBreastFeedSpinner.setOnItemSelectedListener(new CustomOnItemSelectedListener());
-    }
-    // get the selected dropdown list value
-    public void addListenerOnButton() {
-
-        leftBreastFeedSpinner = findViewById(R.id.left_breast_feed_spinner);
-        rightBreastFeedSpinner = findViewById(R.id.right_breast_feed_spinner);
-
-    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

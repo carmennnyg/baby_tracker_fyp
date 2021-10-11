@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class SymptomsActivity extends AppCompatActivity {
 
@@ -28,7 +29,7 @@ public class SymptomsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_symptoms);
 
-        mDiseaseButton= findViewById(R.id.disease);
+        mDiseaseButton = findViewById(R.id.disease);
 
         s1 = findViewById(R.id.syp1);
         s2 = findViewById(R.id.syp2);
@@ -41,111 +42,118 @@ public class SymptomsActivity extends AppCompatActivity {
         mDiseaseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                if (s1.getSelectedItem().toString().equals("")
+                        && s2.getSelectedItem().toString().equals("")
+                        && s3.getSelectedItem().toString().equals("")
+                        && s4.getSelectedItem().toString().equals("")
+                        && s5.getSelectedItem().toString().equals("")
+                        && s6.getSelectedItem().toString().equals("")
+                        && s7.getSelectedItem().toString().equals("")){
+                    Toast.makeText(SymptomsActivity.this, "Please Select Symptoms Before Click The Button!",
+                            Toast.LENGTH_SHORT).show();
 
-                int c[] = new int[6];
-                d[0] = s1.getSelectedItem().toString();
-                d[1] = s2.getSelectedItem().toString();
-                d[2] = s3.getSelectedItem().toString();
-                d[3] = s4.getSelectedItem().toString();
-                d[4] = s5.getSelectedItem().toString();
-                d[5] = s6.getSelectedItem().toString();
-                d[6] = s7.getSelectedItem().toString();
+                } else {
+
+                    int c[] = new int[6];
+                    d[0] = s1.getSelectedItem().toString();
+                    d[1] = s2.getSelectedItem().toString();
+                    d[2] = s3.getSelectedItem().toString();
+                    d[3] = s4.getSelectedItem().toString();
+                    d[4] = s5.getSelectedItem().toString();
+                    d[5] = s6.getSelectedItem().toString();
+                    d[6] = s7.getSelectedItem().toString();
 
 
-                for( int i = 0 ; i < 7 ; i++)
-                {
-                    for( int j=1 ; j <= 6; j++)
-                    {
-                        switch (j)
-                        {
-                            case 1 : {
-                                int l = 0;
-                                l = cold.length;
-                                for(int k=0 ; k<l ; k++ )
-                                {
-                                    if(d[i].equals(cold[k]) )
-                                    {
-                                        c[0]++;
+                    for (int i = 0; i < 7; i++) {
+                        for (int j = 1; j <= 6; j++) {
+                            switch (j) {
+                                case 1: {
+                                    int l = 0;
+                                    l = cold.length;
+                                    for (int k = 0; k < l; k++) {
+                                        if (d[i].equals(cold[k])) {
+                                            c[0]++;
+                                        }
                                     }
+                                    break;
                                 }
-                                break; }
 
-                            case 2: {
-                                int l = 0;
-                                l = diaper_rash.length;
-                                for (int k = 0; k < l; k++) {
-                                    if (d[i].equals(diaper_rash[k])) {
-                                        c[1]++;
+                                case 2: {
+                                    int l = 0;
+                                    l = diaper_rash.length;
+                                    for (int k = 0; k < l; k++) {
+                                        if (d[i].equals(diaper_rash[k])) {
+                                            c[1]++;
+                                        }
                                     }
+                                    break;
                                 }
-                                break;
+
+                                case 3: {
+                                    int l = 0;
+                                    l = colic.length;
+                                    for (int k = 0; k < l; k++) {
+                                        if (d[i].equals(colic[k])) {
+                                            c[2]++;
+                                        }
+                                    }
+                                    break;
+                                }
+
+                                case 4: {
+                                    int l = 0;
+                                    l = baby_acne.length;
+                                    for (int k = 0; k < l; k++) {
+                                        if (d[i].equals(baby_acne[k])) {
+                                            c[3]++;
+                                        }
+                                    }
+                                    break;
+                                }
+
+                                case 5: {
+                                    int l = 0;
+                                    l = constipation.length;
+                                    for (int k = 0; k < l; k++) {
+                                        if (d[i].equals(constipation[k])) {
+                                            c[4]++;
+                                        }
+                                    }
+                                    break;
+                                }
+
+                                case 6: {
+                                    int l = 0;
+                                    l = diarrhea.length;
+                                    for (int k = 0; k < l; k++) {
+                                        if (d[i].equals(diarrhea[k])) {
+                                            c[5]++;
+                                        }
+                                    }
+                                    break;
+                                }
+
+
                             }
-
-                            case 3: {
-                                int l = 0;
-                                l = colic.length;
-                                for (int k = 0; k < l; k++) {
-                                    if (d[i].equals(colic[k])) {
-                                        c[2]++;
-                                    }
-                                }
-                                break;
-                            }
-
-                            case 4: {
-                                int l = 0;
-                                l = baby_acne.length;
-                                for (int k = 0; k < l; k++) {
-                                    if (d[i].equals(baby_acne[k])) {
-                                        c[3]++;
-                                    }
-                                }
-                                break;
-                            }
-
-                            case 5: {
-                                int l = 0;
-                                l = constipation.length;
-                                for (int k = 0; k < l; k++) {
-                                    if (d[i].equals(constipation[k])) {
-                                        c[4]++;
-                                    }
-                                }
-                                break;
-                            }
-
-                            case 6: {
-                                int l = 0;
-                                l = diarrhea.length;
-                                for (int k = 0; k < l; k++) {
-                                    if (d[i].equals(diarrhea[k])) {
-                                        c[5]++;
-                                    }
-                                }
-                                break;
-                            }
-
-
-
                         }
                     }
-                }
 
-                int max = c[0];
-                for( int m=0; m<6 ; m++)
-                {
-                    if(c[m] > max)
-                        max = c[m];
-                }
 
-                Intent disease_screen = new Intent(SymptomsActivity.this,DiseaseActivity.class);
-                disease_screen.putExtra("max",max);
-                disease_screen.putExtra("c",c);
-                startActivity(disease_screen);
+                    int max = c[0];
+                    for (int m = 0; m < 6; m++) {
+                        if (c[m] > max)
+                            max = c[m];
+                    }
+
+                    Intent disease_screen = new Intent(SymptomsActivity.this, DiseaseActivity.class);
+                    disease_screen.putExtra("max", max);
+                    disease_screen.putExtra("c", c);
+                    startActivity(disease_screen);
+                }
 
             }
 
         });
-
     }
+
 }
