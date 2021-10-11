@@ -17,6 +17,7 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 import com.github.mikephil.charting.formatter.IValueFormatter;
+import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
 import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
@@ -390,6 +391,8 @@ public class ChartActivity extends AppCompatActivity {
         lineDataSets.add(setr); //Add setr data to the entry list (lineDataSets)
         LineData data = new LineData(lineDataSets);
         //LineData data2 = new LineData(setr);
+        XAxis xAxis = mBreastFeedingChart.getXAxis();
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(xValues));
         mBreastFeedingChart.setData(data); //sets the data
         mBreastFeedingChart.invalidate(); //update the values and it automatically changes the values in the multi line chart.
         //Animates the charts values on the vertical axis, means that the chart will build up within the specified time from bottom to top.
@@ -410,6 +413,7 @@ public class ChartActivity extends AppCompatActivity {
         set4.setValueTextSize(20f);
         BarData data5 = new BarData(set4);
         XAxis xAxis = mBottleFeedingChart.getXAxis();
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(xValues_bargraph));
         mBottleFeedingChart.setData(data5);
         mBottleFeedingChart.invalidate();
         mBottleFeedingChart.animateY(5000); ////animate vertical 5000 milliseconds
@@ -430,6 +434,7 @@ public class ChartActivity extends AppCompatActivity {
         set2.setValueTextSize(20f);
         BarData data3 = new BarData(set2);
         XAxis xAxis = mSleepingChart.getXAxis();
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(xValues_bargraph));
         mSleepingChart.setData(data3);
         mSleepingChart.invalidate();
         mSleepingChart.animateY(5000); ////animate vertical 5000 milliseconds
@@ -450,6 +455,7 @@ public class ChartActivity extends AppCompatActivity {
         set3.setValueTextSize(20f);
         BarData data4 = new BarData(set3);
         XAxis xAxis = mTemperatureChart.getXAxis();
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(xValues_bargraph));
         mTemperatureChart.setData(data4);
         mTemperatureChart.invalidate();
         mTemperatureChart.animateY(5000); ////animate vertical 5000 milliseconds
