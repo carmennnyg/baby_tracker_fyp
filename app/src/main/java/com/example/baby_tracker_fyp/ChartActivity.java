@@ -67,48 +67,48 @@ public class ChartActivity extends AppCompatActivity {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) { //This method will be called with a snapshot of the current data at the location
 
-                            String[] xValues = {};
-                            float[] yValues = {};
-                            float[] yValues2 = {};
+                            String[] x_value = {};
+                            float[] y_value = {};
+                            float[] y_value1 = {};
 
                             for(DataSnapshot snapshot: dataSnapshot.getChildren()){
-                                String time2 = snapshot.getKey();
+                                String time1 = snapshot.getKey();
 
                                 // Loop all time stamps in the database
-                                int currentSize = xValues.length;
-                                int newSize = currentSize + 1;
-                                String[] tempArray = new String[newSize];
-                                for(int i = 0; i < currentSize; i++)
+                                int current_time_size = x_value.length;
+                                int new_time_size = current_time_size+1;
+                                String[] temp_array = new String[new_time_size];
+                                for(int i = 0; i < current_time_size; i++)
 
                                 {
-                                    tempArray[i] = xValues[i];
+                                    temp_array[i] = x_value[i];
                                 }
 
-                                tempArray[newSize - 1] = time2;
-                                xValues = tempArray;
+                                temp_array[new_time_size-1] = time1;
+                                x_value = temp_array;
                             }
 
                             //// Loop the time of left & right breastfeeding in database
                             //Gives access to all of the immediate children of this snapshot
                             for(DataSnapshot child: dataSnapshot.getChildren()) {
                                 //This method is used to present the data contained in this snapshot into a class of I choosing.
-                                String leftBreastFeedTime = child.child("Left_Breast_Feeding_Time").getValue(String.class);
-                                float lBreastTime = Float.parseFloat(leftBreastFeedTime); //return a new float of the lBreastTime
-                                String rightBreastFeedTime = child.child("Right_Breast_Feeding_Time").getValue(String.class);
-                                float rBreastTime = Float.parseFloat(rightBreastFeedTime); //return a new float of the rBreastTime
+                                String leftBreastFeedingTime = child.child("Left_Breast_Feeding_Time").getValue(String.class);
+                                float lBreastTime = Float.parseFloat(leftBreastFeedingTime); //return a new float of the lBreastTime
+                                String rightBreastFeedingTime = child.child("Right_Breast_Feeding_Time").getValue(String.class);
+                                float rBreastTime = Float.parseFloat(rightBreastFeedingTime); //return a new float of the rBreastTime
 
-                                int currentSize = yValues.length;
-                                int newSize = currentSize + 1;
-                                float[] tempArray = new float[newSize];
-                                float[] tempArray2 = new float[newSize];
-                                for (int i = 0; i < currentSize; i++) {
-                                    tempArray[i] = yValues[i];
-                                    tempArray2[i] = yValues2[i];
+                                int current_size = y_value.length;
+                                int newSize = current_size + 1;
+                                float[] temp_array_1 = new float[newSize];
+                                float[] temp_array_2 = new float[newSize];
+                                for (int i = 0; i < current_size; i++) {
+                                    temp_array_1[i] = y_value[i];
+                                    temp_array_2[i] = y_value1[i];
                                 }
-                                tempArray[newSize - 1] = lBreastTime;
-                                tempArray2[newSize - 1] = rBreastTime;
-                                yValues = tempArray;
-                                yValues2 = tempArray2;
+                                temp_array_1[newSize-1] = lBreastTime;
+                                temp_array_2[newSize-1] = rBreastTime;
+                                y_value = temp_array_1;
+                                y_value1 = temp_array_2;
                             }
 
                             //Change chart features and settings
@@ -119,7 +119,7 @@ public class ChartActivity extends AppCompatActivity {
                             xAxis.setGranularity(1f);
                             //Enables the granularity feature that limits the interval of the y-axis when zooming in
                             xAxis.setGranularityEnabled(true);
-                            drawMultiLineGraph(yValues, yValues2, xValues); //Create the drawMultiLineGraph method
+                            drawMultiLineGraph(y_value, y_value1, x_value); //Create the drawMultiLineGraph method
 
                         }
 
@@ -155,21 +155,21 @@ public class ChartActivity extends AppCompatActivity {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
 
-                            String[] xValues_bargraph={};
-                            int[] yValues_bargraph={};
+                            String[] x_value_bar_graph= {};
+                            int[] y_value_bar_graph={};
 
                             // Loop all time stamps in the database
                             for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                                String time2 = snapshot.getKey();
+                                String time1 = snapshot.getKey();
 
-                                int currentSize = xValues_bargraph.length;
-                                int newSize = currentSize+1;
-                                String[] tempArray = new String[newSize];
-                                for (int i=0; i<currentSize; i++){
-                                    tempArray[i] = xValues_bargraph[i];
+                                int current_time_size = x_value_bar_graph.length;
+                                int new_size = current_time_size + 1;
+                                String[] temp_array = new String[new_size];
+                                for (int i=0; i<current_time_size; i++){
+                                    temp_array[i] = x_value_bar_graph[i];
                                 }
-                                tempArray[newSize-1] = time2;
-                                xValues_bargraph = tempArray;
+                                temp_array[new_size-1] = time1;
+                                x_value_bar_graph = temp_array;
 
                             }
 
@@ -178,16 +178,16 @@ public class ChartActivity extends AppCompatActivity {
                             // Loop all amount of milk in database
                             for (DataSnapshot child: dataSnapshot.getChildren()){
                                 String AmtInOZ  = child.child("Amount_Milk_In_OZ").getValue(String.class);
-                                int AmtInOZ2  = Integer.parseInt(AmtInOZ );
+                                int AmtInOZ2  = Integer.parseInt(AmtInOZ);
 
-                                int currentSize = yValues_bargraph.length;
-                                int newSize = currentSize+1;
-                                int[] tempArray = new int[newSize];
-                                for (int i=0; i<currentSize; i++){
-                                    tempArray[i] = yValues_bargraph[i];
+                                int current_size = y_value_bar_graph.length;
+                                int new_size = current_size+1;
+                                int[] temp_array = new int[new_size];
+                                for (int i=0; i<current_size; i++){
+                                    temp_array[i] = y_value_bar_graph[i];
                                 }
-                                tempArray[newSize-1] = AmtInOZ2 ;
-                                yValues_bargraph = tempArray;
+                                temp_array[new_size-1] = AmtInOZ2 ;
+                                y_value_bar_graph = temp_array;
 
                             }
 
@@ -195,7 +195,7 @@ public class ChartActivity extends AppCompatActivity {
                             XAxis xAxis = mBottleFeedingChart.getXAxis();
                             xAxis.setGranularity(1f);
                             xAxis.setGranularityEnabled(true);
-                            drawBarGraph4(yValues_bargraph,xValues_bargraph);
+                            drawBarGraph4(y_value_bar_graph,x_value_bar_graph);
 
                         }
 
@@ -233,21 +233,21 @@ public class ChartActivity extends AppCompatActivity {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
 
-                            String[] xValues_bargraph={};
-                            int[] yValues_bargraph={};
+                            String[] x_value_bar_graph={};
+                            int[] y_value_bar_graph={};
 
                             // Loop all time stamps in the database
                             for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                                String time2 = snapshot.getKey();
+                                String time1 = snapshot.getKey();
 
-                                int currentSize = xValues_bargraph.length;
-                                int newSize = currentSize+1;
-                                String[] tempArray = new String[newSize];
-                                for (int i=0; i<currentSize; i++){
-                                    tempArray[i] = xValues_bargraph[i];
+                                int current_size = x_value_bar_graph.length;
+                                int new_size = current_size+1;
+                                String[] temp_array = new String[new_size];
+                                for (int i=0; i<current_size; i++){
+                                    temp_array[i] = x_value_bar_graph[i];
                                 }
-                                tempArray[newSize-1] = time2;
-                                xValues_bargraph = tempArray;
+                                temp_array[new_size-1] = time1;
+                                x_value_bar_graph = temp_array;
 
                             }
 
@@ -258,14 +258,14 @@ public class ChartActivity extends AppCompatActivity {
                                 String sleepMin = child.child("Sleep_Duration").getValue(String.class);
                                 int sleepMin2 = Integer.parseInt(sleepMin);
 
-                                int currentSize = yValues_bargraph.length;
-                                int newSize = currentSize+1;
-                                int[] tempArray = new int[newSize];
-                                for (int i=0; i<currentSize; i++){
-                                    tempArray[i] = yValues_bargraph[i];
+                                int current_size = y_value_bar_graph.length;
+                                int new_size = current_size+1;
+                                int[] temp_array = new int[new_size];
+                                for (int i=0; i<current_size; i++){
+                                    temp_array[i] = y_value_bar_graph[i];
                                 }
-                                tempArray[newSize-1] = sleepMin2;
-                                yValues_bargraph = tempArray;
+                                temp_array[new_size-1] = sleepMin2;
+                                y_value_bar_graph = temp_array;
 
                             }
 
@@ -273,7 +273,7 @@ public class ChartActivity extends AppCompatActivity {
                             XAxis xAxis = mSleepingChart.getXAxis();
                             xAxis.setGranularity(1f);
                             xAxis.setGranularityEnabled(true);
-                            drawBarGraph(yValues_bargraph,xValues_bargraph);
+                            drawBarGraph(y_value_bar_graph,x_value_bar_graph);
 
                         }
 
@@ -310,21 +310,21 @@ public class ChartActivity extends AppCompatActivity {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
 
-                            String[] xValues_bargraph={};
-                            int[] yValues_bargraph={};
+                            String[] x_value_bar_graph={};
+                            int[] y_value_bar_graph={};
 
                             // Loop all the time stamps in the database
                             for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                                String time2 = snapshot.getKey();
+                                String time1 = snapshot.getKey();
 
-                                int currentSize = xValues_bargraph.length;
-                                int newSize = currentSize+1;
-                                String[] tempArray = new String[newSize];
-                                for (int i=0; i<currentSize; i++){
-                                    tempArray[i] = xValues_bargraph[i];
+                                int current_size = x_value_bar_graph.length;
+                                int new_size = current_size + 1;
+                                String[] temp_array = new String[new_size];
+                                for (int i=0; i<current_size; i++){
+                                    temp_array[i] = x_value_bar_graph[i];
                                 }
-                                tempArray[newSize-1] = time2;
-                                xValues_bargraph = tempArray;
+                                temp_array[new_size-1] = time1;
+                                x_value_bar_graph = temp_array;
 
                             }
 
@@ -333,16 +333,16 @@ public class ChartActivity extends AppCompatActivity {
                             // Loop all the degree celsius in the database
                             for (DataSnapshot child: dataSnapshot.getChildren()){
                                 String degreeCelsius = child.child("Degree_Celsius").getValue(String.class);
-                                int degreeCelsius2 = Integer.parseInt(degreeCelsius);
+                                int degreeCelsius1 = Integer.parseInt(degreeCelsius);
 
-                                int currentSize = yValues_bargraph.length;
-                                int newSize = currentSize+1;
-                                int[] tempArray = new int[newSize];
-                                for (int i=0; i<currentSize; i++){
-                                    tempArray[i] = yValues_bargraph[i];
+                                int current_size = y_value_bar_graph.length;
+                                int new_size = current_size+1;
+                                int[] temp_array = new int[new_size];
+                                for (int i=0; i<current_size; i++){
+                                    temp_array[i] = y_value_bar_graph[i];
                                 }
-                                tempArray[newSize-1] = degreeCelsius2;
-                                yValues_bargraph = tempArray;
+                                temp_array[new_size-1] = degreeCelsius1;
+                                y_value_bar_graph = temp_array;
 
                             }
 
@@ -350,7 +350,7 @@ public class ChartActivity extends AppCompatActivity {
                             XAxis xAxis = mTemperatureChart.getXAxis();
                             xAxis.setGranularity(1f);
                             xAxis.setGranularityEnabled(true);
-                            drawBarGraph1(yValues_bargraph,xValues_bargraph);
+                            drawBarGraph1(y_value_bar_graph,x_value_bar_graph);
                         }
 
                         @Override
@@ -371,28 +371,28 @@ public class ChartActivity extends AppCompatActivity {
 
     // Breast Feeding Multi Line Graph
     // Pass data in the Multi Line Chart
-    private void drawMultiLineGraph(float[] yValues, float[] yValues2, String[] xValues) {
+    private void drawMultiLineGraph(float[] y_value, float[] y_value1, String[] x_value) {
         ArrayList<Entry> yData = new ArrayList<>(); //create a list of entry of yData
-        ArrayList<Entry> yData2 = new ArrayList<>(); //create a list of entry of yData2
-        for (int i = 0; i < yValues.length; i++) {
-            yData.add(new Entry(i, yValues[i])); //Add yData to the entry list by creating an object of Entry and passing x and y to its constructor
-            yData2.add(new Entry(i, yValues2[i]));
+        ArrayList<Entry> yData1 = new ArrayList<>(); //create a list of entry of yData2
+        for (int i = 0; i < y_value.length; i++) {
+            yData.add(new Entry(i, y_value[i])); //Add yData to the entry list by creating an object of Entry and passing x and y to its constructor
+            yData1.add(new Entry(i, y_value1[i]));
         }
 
         ArrayList<ILineDataSet> lineDataSets = new ArrayList<>(); ////values for data input lineDataSets
-        LineDataSet setl, setr; //Create a reference variable of the Multi Line chart, LineDataSet setl, setr
-        setl = new LineDataSet(yData, "Left Breast Feeding Time in Mins"); //create a dataset and give it a type
-        setl.setColor(Color.BLUE); // to set the color
-        setr = new LineDataSet(yData2, "Right Breast Feeding Time in Mins"); //create a dataset and give it a type
-        setr.setColor(Color.GREEN); // to set the color
-        setl.setValueTextSize(20f);
-        setr.setValueTextSize(20f);
-        lineDataSets.add(setl); //Add setl data to the entry list (lineDataSets)
-        lineDataSets.add(setr); //Add setr data to the entry list (lineDataSets)
+        LineDataSet setleft, setright; //Create a reference variable of the Multi Line chart, LineDataSet setl, setr
+        setleft = new LineDataSet(yData, "Left Breast Feeding Time in Mins"); //create a dataset and give it a type
+        setleft.setColor(Color.BLUE); // to set the color
+        setright = new LineDataSet(yData1, "Right Breast Feeding Time in Mins"); //create a dataset and give it a type
+        setright.setColor(Color.GREEN); // to set the color
+        setleft.setValueTextSize(20f);
+        setright.setValueTextSize(20f);
+        lineDataSets.add(setleft); //Add setl data to the entry list (lineDataSets)
+        lineDataSets.add(setright); //Add setr data to the entry list (lineDataSets)
         LineData data = new LineData(lineDataSets);
         //LineData data2 = new LineData(setr);
         XAxis xAxis = mBreastFeedingChart.getXAxis();
-        xAxis.setValueFormatter(new IndexAxisValueFormatter(xValues));
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(x_value));
         mBreastFeedingChart.setData(data); //sets the data
         mBreastFeedingChart.invalidate(); //update the values and it automatically changes the values in the multi line chart.
         //Animates the charts values on the vertical axis, means that the chart will build up within the specified time from bottom to top.
@@ -400,20 +400,20 @@ public class ChartActivity extends AppCompatActivity {
     }
 
     // Bottle Feeding Bar Graph
-    private void drawBarGraph4(int [] yValues_bargraph, String [] xValues_bargraph){
+    private void drawBarGraph4(int [] y_value_bargraph, String [] x_value_bargraph){
         List<BarEntry> yData = new ArrayList<>();
-        for (int i = 0; i<yValues_bargraph.length;i++){
-            yData.add(new BarEntry(i,yValues_bargraph[i]));
+        for (int i = 0; i<y_value_bargraph.length;i++){
+            yData.add(new BarEntry(i,y_value_bargraph[i]));
         }
 
-        BarDataSet set4;
-        set4 = new BarDataSet(yData,"Amount In OZ");
-        set4.setColors(ColorTemplate.JOYFUL_COLORS);
-        set4.setDrawValues(true);
-        set4.setValueTextSize(20f);
-        BarData data5 = new BarData(set4);
+        BarDataSet set1bar;
+        set1bar = new BarDataSet(yData,"Amount In OZ");
+        set1bar.setColors(ColorTemplate.JOYFUL_COLORS);
+        set1bar.setDrawValues(true);
+        set1bar.setValueTextSize(20f);
+        BarData data5 = new BarData(set1bar);
         XAxis xAxis = mBottleFeedingChart.getXAxis();
-        xAxis.setValueFormatter(new IndexAxisValueFormatter(xValues_bargraph));
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(x_value_bargraph));
         mBottleFeedingChart.setData(data5);
         mBottleFeedingChart.invalidate();
         mBottleFeedingChart.animateY(5000); ////animate vertical 5000 milliseconds
@@ -421,20 +421,20 @@ public class ChartActivity extends AppCompatActivity {
     }
 
     // Sleep Bar Chart
-    private void drawBarGraph(int [] yValues_bargraph, String [] xValues_bargraph){
+    private void drawBarGraph(int [] y_value_bargraph, String [] x_value_bargraph){
         List<BarEntry> yData = new ArrayList<>();
-        for (int i = 0; i<yValues_bargraph.length;i++){
-            yData.add(new BarEntry(i,yValues_bargraph[i]));
+        for (int i = 0; i<y_value_bargraph.length;i++){
+            yData.add(new BarEntry(i,y_value_bargraph[i]));
         }
 
-        BarDataSet set2;
-        set2 = new BarDataSet(yData,"Sleep Duration in Mins");
-        set2.setColors(ColorTemplate.MATERIAL_COLORS);
-        set2.setDrawValues(true);
-        set2.setValueTextSize(20f);
-        BarData data3 = new BarData(set2);
+        BarDataSet set2bar;
+        set2bar = new BarDataSet(yData,"Sleep Duration in Mins");
+        set2bar.setColors(ColorTemplate.MATERIAL_COLORS);
+        set2bar.setDrawValues(true);
+        set2bar.setValueTextSize(20f);
+        BarData data3 = new BarData(set2bar);
         XAxis xAxis = mSleepingChart.getXAxis();
-        xAxis.setValueFormatter(new IndexAxisValueFormatter(xValues_bargraph));
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(x_value_bargraph));
         mSleepingChart.setData(data3);
         mSleepingChart.invalidate();
         mSleepingChart.animateY(5000); ////animate vertical 5000 milliseconds
@@ -442,25 +442,24 @@ public class ChartActivity extends AppCompatActivity {
     }
 
     // Temperature Bar Chart
-    private void drawBarGraph1(int [] yValues_bargraph, String [] xValues_bargraph){
+    private void drawBarGraph1(int [] y_value_bargraph, String [] x_value_bargraph){
         List<BarEntry> yData = new ArrayList<>();
-        for (int i = 0; i<yValues_bargraph.length;i++){
-            yData.add(new BarEntry(i,yValues_bargraph[i]));
+        for (int i = 0; i<y_value_bargraph.length;i++){
+            yData.add(new BarEntry(i,y_value_bargraph[i]));
         }
 
-        BarDataSet set3;
-        set3 = new BarDataSet(yData,"Degree Celsius");
-        set3.setColors(ColorTemplate.COLORFUL_COLORS);
-        set3.setDrawValues(true);
-        set3.setValueTextSize(20f);
-        BarData data4 = new BarData(set3);
+        BarDataSet set3bar;
+        set3bar = new BarDataSet(yData,"Degree Celsius");
+        set3bar.setColors(ColorTemplate.COLORFUL_COLORS);
+        set3bar.setDrawValues(true);
+        set3bar.setValueTextSize(20f);
+        BarData data4 = new BarData(set3bar);
         XAxis xAxis = mTemperatureChart.getXAxis();
-        xAxis.setValueFormatter(new IndexAxisValueFormatter(xValues_bargraph));
+        xAxis.setValueFormatter(new IndexAxisValueFormatter(x_value_bargraph));
         mTemperatureChart.setData(data4);
         mTemperatureChart.invalidate();
         mTemperatureChart.animateY(5000); ////animate vertical 5000 milliseconds
 
     }
-
 
 }

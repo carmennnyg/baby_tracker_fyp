@@ -42,13 +42,13 @@ public class SymptomsActivity extends AppCompatActivity {
         mDiseaseButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (s1.getSelectedItem().toString().equals("")
-                        && s2.getSelectedItem().toString().equals("")
-                        && s3.getSelectedItem().toString().equals("")
-                        && s4.getSelectedItem().toString().equals("")
-                        && s5.getSelectedItem().toString().equals("")
-                        && s6.getSelectedItem().toString().equals("")
-                        && s7.getSelectedItem().toString().equals("")){
+                if (s1.getSelectedItem().toString().equals("SELECT SYMPTOM")
+                        && s2.getSelectedItem().toString().equals("SELECT SYMPTOM")
+                        && s3.getSelectedItem().toString().equals("SELECT SYMPTOM")
+                        && s4.getSelectedItem().toString().equals("SELECT SYMPTOM")
+                        && s5.getSelectedItem().toString().equals("SELECT SYMPTOM")
+                        && s6.getSelectedItem().toString().equals("SELECT SYMPTOM")
+                        && s7.getSelectedItem().toString().equals("SELECT SYMPTOM")){
                     Toast.makeText(SymptomsActivity.this, "Please Select Symptoms Before Click The Button!",
                             Toast.LENGTH_SHORT).show();
 

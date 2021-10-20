@@ -9,7 +9,6 @@
 
     <string-array name="breastfeeding_time">
         <item>Choose Time</item>
-        <item>None</item>
         <item>0</item>
         <item>5</item>
         <item>10</item>
@@ -22,7 +21,6 @@
 
     <string-array name="meal_feeding">
         <item>Choose a Meal</item>
-        <item>None</item>
         <item>Meat</item>
         <item>Cereal</item>
         <item>Finger Foods</item>
@@ -36,7 +34,6 @@
 
     <string-array name="supplement_feeding">
         <item>Choose a Supplement</item>
-        <item>None</item>
         <item>Vitamin 12</item>
         <item>Vitamin D</item>
         <item>Vitamin K</item>
@@ -55,7 +52,6 @@
 
     <string-array name="symptom_list">
         <item>SELECT SYMPTOM</item>
-        <item>None</item>
         <item>Fever</item>
         <item>Sneezing</item>
         <item>Coughing</item>
