@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.LineChart;
@@ -36,7 +37,9 @@ public class ChartActivity extends AppCompatActivity {
     BarChart mSleepingChart;
     BarChart mTemperatureChart;
     BarChart mBottleFeedingChart;
+    private TextView mBreastFeedingTV, mBottleFeedingTV, mSleepingTV, mTemperatureTV;
     private FirebaseAuth mAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,12 +48,20 @@ public class ChartActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        mBreastFeedingTV = (TextView) findViewById(R.id.lastBreastFeedingTime);
+        mBottleFeedingTV = (TextView) findViewById(R.id.lastBottleFeedingTime);
+        mSleepingTV = (TextView) findViewById(R.id.lastSleepTime);
+        mTemperatureTV = (TextView) findViewById(R.id.lastTemperatureTime);
+
+
         // Breast Feeding
         //a LineChart is initialized from xml
         mBreastFeedingChart = (LineChart) findViewById(R.id.line_chart_breast_feeding);
 
+
         // __________________Start for retrieving breast feeding database
         // _________________(time of left and right breast) information_________________________________
+
 
         //get an instance and access a location in the database
         final DatabaseReference current_user_db2 = FirebaseDatabase.getInstance().getReference()
@@ -66,6 +77,7 @@ public class ChartActivity extends AppCompatActivity {
                     current_user_db2.child(dateAndTime).addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) { //This method will be called with a snapshot of the current data at the location
+                            mBreastFeedingTV.setText(dateAndTime);
 
                             String[] x_value = {};
                             float[] y_value = {};
@@ -154,6 +166,8 @@ public class ChartActivity extends AppCompatActivity {
                     current_user_db.child(dateAndTime).addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
+                            mBottleFeedingTV.setText(dateAndTime);
+
 
                             String[] x_value_bar_graph= {};
                             int[] y_value_bar_graph={};
@@ -219,6 +233,7 @@ public class ChartActivity extends AppCompatActivity {
 
         // __________________Start for retrieving sleeping database(amount of sleep) information_________________________________
 
+
         final DatabaseReference current_user_db5 = FirebaseDatabase.getInstance().getReference()
                 .child("Users").child(mAuth.getCurrentUser().getUid())
                 .child("Sleep Duration").child("Time Stamp");
@@ -232,6 +247,7 @@ public class ChartActivity extends AppCompatActivity {
                     current_user_db5.child(date).addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
+                           mSleepingTV.setText(date);
 
                             String[] x_value_bar_graph={};
                             int[] y_value_bar_graph={};
@@ -290,6 +306,7 @@ public class ChartActivity extends AppCompatActivity {
             }
         });
 
+
         // Temperature
         //a BarChart is initialized from xml
         mTemperatureChart = (BarChart) findViewById(R.id.bar_chart_temperature);
@@ -309,6 +326,8 @@ public class ChartActivity extends AppCompatActivity {
                     current_user_db6.child(date).addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
+                            mTemperatureTV.setText(date);
+
 
                             String[] x_value_bar_graph={};
                             int[] y_value_bar_graph={};
